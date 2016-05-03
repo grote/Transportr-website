@@ -35,6 +35,11 @@ section#top div {
     margin: 8px auto;
 }
 
+/* workaround for https://github.com/google/material-design-lite/issues/4140 */
+.mdl-layout {
+    height: auto;
+}
+
 .summary {
     padding-top: 100px;
 }
