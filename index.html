@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="The public transport companion that respects your privacy and your freedom. Transportr is a non-profit app developed by people around the world to make using public transport as easy as possible wherever you are."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://transportr.grobox.de/images/web_hi_res_512.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Transportr - Public Transport Companion</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <!-- Page styles
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/material.icons.css"/>
+    <link rel="stylesheet" href="css/material.red-deep_orange.min.css"/>
+	<link rel="stylesheet" href="css/leaflet.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+      <header class="mdl-layout__header mdl-layout__header--waterfall mdl-layout__header--scroll">
+        <div class="mdl-layout__header-row">
+          <div class="mdl-cell mdl-layout-title">
+              <img class="logo-header" src="images/logo-header.png" alt="Transportr"/>
+          </div>
+
+          <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="mdl-layout-spacer"></div>
+
+          <!-- Navigation -->
+          <div class="mdl-layout--large-screen-only">
+            <nav class="mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#coverage">Coverage</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#features">Features</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#contribute">Contribute</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#freesoftware">Free Software</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#donate">Donate</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#top">Start</a>
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#coverage">Coverage</a>
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#features">Features</a>
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#contribute">Contribute</a>
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#freesoftware">Free Software</a>
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#donate">Donate</a>
+        </nav>
+      </div>
+
+      <div class="mdl-layout__content">
+
+        <section id="top">
+            <div></div>
+        </section>
+
+        <section class="mdl-grid max-width">
+
+            <div class="mdl-cell mdl-cell--6-col summary">
+                <h2>
+                    The public transport companion
+                    that respects your privacy and your freedom.
+                </h2>
+
+                <h4>
+                    Transportr is a non-profit app developed by people around the world
+                    to make using public transport as easy as possible wherever you are.
+                </h4>
+
+                <div class="stores">
+                    <a href="https://f-droid.org/repository/browse/?fdid=de.grobox.liberario"><img src="images/fdroid.png" alt="Available on F-Droid"/></a>
+                    <a href="https://play.google.com/store/apps/details?id=de.grobox.liberario&amp;utm_source=website"><img src="images/googleplay.png" alt="Available on Google Play"/></a>
+                </div>
+
+                <div class="socialmedia">
+                    <a href="https://twitter.com/TransportrApp"><img src="images/twitter.png" alt="Follow @TransportrApp"/></a><br/>
+                    <a href="https://flattr.com/submit/auto?user_id=Tovok7&amp;url=http%3A%2F%2FTransportr.grobox.de"><img src="images/flattr.png" alt="Flattr me"></a>
+                </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--6-col">
+                <div class="frame">
+                    <img src="images/directions.gif" class="gif" alt="Transportr App Animation"/>
+                </div>
+            </div>
+
+
+        </section>
+
+        <section id="coverage" class="alternate">
+        <div class="mdl-grid max-width">
+            <h1>Where does it work?</h1>
+
+            <div id="map" class="mdl-cell mdl-cell--12-col" style="height: 500px; margin: auto; margin-bottom: 20px;"></div>
+
+            <p>
+                Orange countries are supported for long-distance travels.
+                Pins on the map show regional or local transport networks that are supported.
+                If you live close to a pin, check out this network.
+                It might cover your area as well.
+            </p>
+            <p>
+                <strong>Attention:</strong> There is no guarantee for the correctness of the data.
+                Please only use this app at your own risk.
+            </p>
+        </div>
+        </section>
+
+        <section id="features">
+
+            <div class="mdl-grid max-width">
+            
+                <h1 class="mdl-cell--12-col">Features</h1>
+
+                <div class="feature-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
+                  <div class="mdl-card__title">
+                    Routing &amp; Directions
+                  </div>
+                  <div class="mdl-card__media" style="background-image: url('images/feature-directions.png');"></div>
+                  <div class="mdl-card__supporting-text">
+                    Get directions from any station to your destination.
+                    You current GPS position and addresses are also supported.
+                    Many transport networks also show delays and the platform the train leaves.
+                  </div>
+                </div>
+
+                <div class="feature-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
+                  <div class="mdl-card__title">
+                      Maps
+                  </div>
+                  <div class="mdl-card__media" style="background-image: url('images/feature-maps.png');"></div>
+                  <div class="mdl-card__supporting-text">
+                      Do you need to walk to another station?
+                      Transportr shows you the way on the map or alternatively any external map application.
+                      It also shows all station or trip segments on the map as well.
+                  </div>
+                </div>
+
+                <div class="feature-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
+                  <div class="mdl-card__title">
+                    Departures
+                  </div>
+                  <div class="mdl-card__media" style="background-image: url('images/feature-departures.png');"></div>
+                  <div class="mdl-card__supporting-text">
+                      Select any station and see the next departures.
+                      Many transport networks also show the delays.
+                  </div>
+                </div>
+
+                <div class="feature-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
+                  <div class="mdl-card__title">
+                    Finding Nearby Stations
+                  </div>
+                  <div class="mdl-card__media" style="background-image: url('images/feature-nearbystations.png');"></div>
+                  <div class="mdl-card__supporting-text">
+                      Use your current GPS position to find nearby stations
+                      or find stations close to an address or other stations.
+                  </div>
+                </div>
+
+                <p style="margin: 30px 0;">
+                    These are just the main features.
+                    Many little ones are still waiting for you to discover them yourself.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section id="demo" class="alternate">
+
+            <div class="mdl-grid max-width">
+            <div class="mdl-cell mdl-cell--8-col">
+                <div class="frame">
+                    <img src="images/nearbystations.gif" class="gif" alt="Transportr App Animation"/>
+                </div>
+            </div>
+            </div>
+
+        </section>
+
+
+        <section id="contribute">
+            <div class="mdl-grid max-width">
+            <div class="mdl-cell mdl-cell--12-col">
+
+            <h1>Contributing</h1>
+
+            <p>
+            Transportr is developed entirely by volunteers who like what they are doing.
+            Contributions should be fun.
+            They are both encouraged and appreciated.
+            </p>
+
+            <p>
+            There are many possible ways to contribute and for most of them you don't need to know how to program.
+            Have a look at the options below and just get started! :)
+            </p>
+
+            <h2>Finding and Reporting Bugs</h2>
+
+            <p>
+            Every software has bugs.
+            So does Transportr.
+            If you ever find it to behave in a way you would not expect it to,
+            please have a look at the list of <a href="https://github.com/grote/Transportr/issues">open</a>
+            and <a href="https://github.com/grote/Transportr/issues?q=is%3Aissue+is%3Aclosed">closed</a> issues to see if it already has been reported.
+            </p>
+
+            <p>
+            If the bug you have found is not reported already,
+            please <a href="https://github.com/grote/Transportr/issues/new">create a new issue</a>
+            and describe what exactly you did to produce the faulty behavior.
+            Screenshots are always welcome to illustrate your description.
+            </p>
+
+            <h2>Testing Beta Releases</h2>
+
+            <p>
+            If you feel adventurous, you can test new versions of Transportr before they are released to the general public.
+            These are made available via a special software channel for <a href="https://f-droid.org/">F-Droid</a>.
+            So please install F-Droid first
+            and then follow these <a href="http://grobox.de/fdroid/">instructions for adding the special software channel</a> to it.
+            </p>
+
+            <p>
+            You will then receive Transportr and all its updates via F-Droid.
+            If you had it installed via the official F-Droid repository before,
+            you will need to uninstall this version first before you can install the one from my software channel,
+            because they are signed with different keys.
+            Please note that you will lose all data when you uninstall Transportr.
+            </p>
+
+            <h2>Design and Graphics</h2>
+           
+            <p>
+            Transportr should look pretty.
+            People with design skills are encouraged to contribute those and help making Transportr look even better.
+            </p>
+
+            <h3>Transport Network Logos</h3>
+
+            <p>
+            Each transport network has its own logo.
+            For some transport networks Transportr still doesn't have a logo, but shows a placeholder instead.
+            You can send in as many logo graphics as you want.
+            In the past, Transportr was using raster graphics in PNG format.
+            Now, we are only accepting vector graphics.
+            SVG files are collected in <a href="https://github.com/grote/Transportr/tree/master/art/networks">/art/networks</a>
+            and need to be converted into the Android vector format.
+            There is tools on the internet that allow you to do this:
+            <a href="https://inloop.github.io/svg2android/">svg2android</a> or
+            <a href="https://a-student.github.io/SvgToVectorDrawableConverter.Web/">SvgToVectorDrawableConverter</a>
+            The name of the file should always be network_X_logo.xml
+            where X is the short ID of the network in Transportr in lower case.
+            Here is an <a href="https://github.com/grote/Transportr/blob/master/res/drawable/network_br_logo.xml">example of Brazil (BR)</a>.
+            </p>
+
+            <p>
+                Ideally, you send in logo graphics with a Pull Request in Github.
+                See <a href="#sourcecode">Working with the Source code</a> for more information.
+                Alternatively, you can <a href="https://github.com/grote/Transportr/issues/new">create a new issue in GitHub</a>
+                and just drag and drop the graphics in there.
+            </p>
+            <p>
+                Since Transportr offers a dark and a light theme, transparent backgrounds usually do not work for the logo.
+                Please try the logo on black and white backgrounds first and if it does not work, just use a white background.
+            </p>
+
+            <h3>Trip Detail Header Graphics</h3>
+
+            <p>
+            When you search for directions and view a trip in detail, there's a header graphic at the top.
+            Ideally, there's a different header graphic for each means of transport
+            that can be shown depending on your specific trip.
+            These graphics could even be localized per transport network showing a S-Bahn in Berlin
+            and a TGV for long distance connections in France.
+            </p>
+
+            <h2>Translating Into Your Language</h2>
+
+            <p>
+                Translating Transportr is very easy.
+                Just sign up for an account at <a href="https://www.transifex.com">Transifex</a>.
+                After you are logged in,
+                go to the <a href="https://www.transifex.com/projects/p/transportr/">Transportr translation project</a>.
+                There you can click the "Request language" button if your language does not exist,
+                or if you want to improve existing translations,
+                apply for the respective language team.
+            </p>
+
+            <p>
+                What you translate there will then be included in the next release of Transportr.
+            </p>
+            
+            <h2 id="add_region">Adding Support For More Regions</h2>
+
+            <p>
+                Ideally, Transportr will support the whole world some day.
+                To achieve this, we rely on you to add support for more public transport networks.
+                Transportr uses the <a href="https://github.com/schildbach/public-transport-enabler/">public transport enabler</a> library
+                to access transport data.
+                This library is the optimal place to add new transport networks.
+                This way not only Transportr will benefit from your work,
+                but also other apps using this library.
+            </p>
+
+            </div>
+
+            <div class="mdl-cell mdl-cell--8-col">
+
+            <p>
+                The easiest way to add your area to Transportr is to check
+                if its data is already <a href="https://navitia.opendatasoft.com/explore/">included in Navitia</a>.
+                If it is not there, you can check if your public transportation agencies are already providing their data to Google.
+                There is <a href="https://maps.google.com/landing/transit/cities/index.html">a long list</a> that you can consult.
+                If you find your city there,
+                a <a href="https://en.wikipedia.org/wiki/General_Transit_Feed_Specification">General Transit Feed Specification</a> (GTFS) already exists for it.
+                In the best case, this GTFS data is also published somewhere.
+                Find out where it is published and then
+                just <a href="https://groups.google.com/forum/#!forum/navitia">contact Navitia</a>
+                for them to make this data available via their free web service API.
+                Transportr can then use this API to work in your area.
+                If the GTFS data exists, but is not published,
+                please contact your public transport agencies and convince them to publish this data.
+                A public service for the people should embrace Open Data and publish its data.
+            </p>
+            
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col" style="text-align:center;">
+                <a href="http://www.navitia.io/"><img src="images/navitia.png" alt="Powered by Navitia.io"/></a>
+            </div>
+
+            <div class="mdl-cell mdl-cell--12-col">
+            <p>
+                So the data of your area is in Navitia already, that's great!
+                Now there's just two steps missing of getting it into Transportr.
+                Unfortunately, for those steps it is helpful to know how to use git and Java.
+                But even if don't know those, getting the preconditions from above ready will help the next person to do it.
+                At first, you need to get support for the area into the public transport enabler.
+                Here's two examples from the past:
+                <a href="https://github.com/schildbach/public-transport-enabler/pull/70/files">Ontario</a> and
+                <a href="https://github.com/schildbach/public-transport-enabler/pull/55/files">South-West of France</a>.
+                After your pull request has been accepted, you can move one adding the last final bit to Transportr.
+                Here's the corresponding examples:
+                <a href="https://github.com/grote/Transportr/pull/157/files">Ontario</a> and
+                <a href="https://github.com/grote/Transportr/commit/25a51433bc5aecb1b6e2f5baf96eed763139962a">South-West of France</a>.
+                Once this pull request has been accepted as well, your area will be included in the next Transportr release.
+            </p>
+
+            </div>
+            <div class="mdl-cell mdl-cell--12-col">
+
+            <p>
+                In case your public transport agency is not working with Google
+                and does not have GTFS data available for others to use,
+                you can still check whether their system is based on
+                <a href="http://www.hacon.de/hafas-en">HAFAS</a>,
+                <a href="http://efa.de">EFA</a>
+                or <a href="http://www.tsinw.com">TSI</a>.
+                Support for these systems is already in the public-transport-enabler,
+                so it is probably easy to add your area.
+            </p>
+
+
+            <h2 id="sourcecode">Working with the Source Code</h2>
+
+            <p>
+                If you want to start working on Transportr's code and if you haven't done already,
+                you should <a href="https://developer.android.com/training/basics/firstapp/index.html">familiarize yourself with Android development</a>
+                and <a href="https://developer.android.com/sdk/index.html">set up a development environment</a>.
+            </p>
+
+            <p>
+                The next step is to clone the source code repository.
+                Please make sure to also clone the git submodules that contain external libraries.
+                More <a href="https://github.com/grote/Transportr#building-from-source">information about building from source</a>
+                is available on GitHub.
+            </p>
+
+            <p>
+                If you want to do more than fixing bugs,
+                please create an issue for the feature you want to work on at GitHub <em>before</em> doing any major work,
+                so that other developers know about your plans, can coordinate, prevent duplicated work
+                and discuss the best approach for your undertaking.
+            </p>
+
+            <p>
+                Missing features are documented
+                in the <a href="https://github.com/grote/Transportr/issues?labels=enhancement&amp;state=open">issue tracker</a>.
+                Feel free to look there for ideas or to add your own.
+            </p>
+
+            <p>
+                There is also <a href="https://github.com/grote/Transportr/labels/beginner%20job">a list of beginner tasks</a> for you to get started easily.
+            </p>
+
+        </div>
+        </div>
+
+        </section>
+
+
+
+        <section id="freesoftware" class="alternate">
+            <div class="mdl-grid max-width">
+
+            <h1 class="mdl-cell--12-col">Free Software (Open Source)</h1>
+
+            <div class="mdl-cell mdl-cell--8-col">
+
+            <p>
+                This app is <a href="https://fsfe.org/freesoftware">Free Software</a>.
+                It means that you are free to use, study, share and improve it.
+                Its source code is public and can be inspected by everyone to make sure it only really does what it is supposed to do.
+                This app respects your privacy and your freedom.
+            </p>
+
+            </div>
+            <div class="mdl-cell mdl-cell--4-col"><img src="images/gplv3.png" alt="GNU GPLv3"></div>
+
+            <div class="mdl-cell mdl-cell--12-col">
+            <p>
+                Legally, you are allowed to redistribute and/or modify it under the terms of the
+                <a href="https://www.gnu.org/licenses/gpl.html">GNU General Public License</a> as
+                published by the Free Software Foundation,
+                either version 3 of the License, or (at your option) any later version.
+            </p>
+            </div>
+            
+            </div>
+
+        </section>
+
+
+        <section id="donate">
+            <div class="mdl-grid max-width">
+            <div class="mdl-cell mdl-cell--12-col">
+
+            <h1>Donate</h1>
+
+            <p>
+                You can do small micro-payments via <a href="https://flattr.com">Flattr</a>.
+            </p>
+
+            <p>
+                <a href="https://flattr.com/submit/auto?user_id=Tovok7&amp;url=http%3A%2F%2FTransportr.grobox.de"><img src="images/flattr.png" alt="Flattr me"></a>
+            </p>
+
+            </div>
+
+            <div class="mdl-cell mdl-cell--8-col">
+            <p>
+                You can also send donations via <a href="https://bitcoin.org">Bitcoin</a>
+                to this address:
+                <pre>12JaQp8zfqRb83JfSwVjH4rZWsZnWRPoyG</pre>
+            </p>
+            <p>
+                <a href="bitcoin:12JaQp8zfqRb83JfSwVjH4rZWsZnWRPoyG"><img src="images/bitcoin.png" alt="Donate Bitcoin"></a>
+            </p>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col">
+            <p>
+                <a href="bitcoin:12JaQp8zfqRb83JfSwVjH4rZWsZnWRPoyG"><img src="images/bitcoin-qr.png" id="bitcoin-qr" alt="Bitcoin QR Code"></a>
+            </p>
+            </div>
+
+            <div class="mdl-cell mdl-cell--12-col">
+            <p>
+                More options might be added later.
+                There is an <a href="https://github.com/grote/Transportr/issues/83">issue on GitHub</a>
+                where additional options are being discussed.
+            </p>
+
+            </div>
+            </div>
+
+        </section>
+
+        <footer class="mdl-mega-footer">
+            <div class="mdl-grid max-width">
+            
+                <div class="mdl-cell mdl-cell--12-col" style="text-align:center;">
+                    <a href="https://github.com/grote/Transportr"><img src="images/github.png" alt="Fork me on GitHub"/></a>
+                </div>
+
+                <div class="mdl-cell mdl-cell--12-col">
+                    <p>
+                    The GIFs were recorded with <a href="http://robogif.virag.si/">Robogif</a>
+                    and post-processed with <a href="http://www.lcdf.org/gifsicle/">gifsicle</a>.
+                    </p>
+
+                    <p>
+                    Top image of Berlin Hauptbahnhof by <a href="https://www.flickr.com/photos/tuotengganai/">tuo tengganai</a>
+                    licenced under <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>.
+                    <br/>
+                    Subway image of guy with headphones by <a href="https://www.flickr.com/photos/pamhule/">Jens Schott Knudsen</a>
+                    licenced under <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a>.
+                    </p>
+                </div>
+            </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="js/material.min.js"></script>
+
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//transportr.grobox.de/stats/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 8]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//transportr.grobox.de/stats/piwik.php?idsite=8" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
+	<script src="js/leaflet.js"></script>
+	<script src="js/leaflet.ajax.min.js" type="text/javascript"></script>
+	<script>
+
+		var map = L.map('map').setView([30, 0], 2);
+
+		var countries = [
+			'Germany',
+			'Switzerland',
+			'Austria',
+			'Belgium',
+            'Netherlands',
+			'Luxembourg',
+			'Denmark',
+			'Sweden',
+			'Norwegen',
+			'Poland',
+			'United Kingdom',
+			'Ireland'
+		];
+
+		L.marker([52.516667,13.383333]).addTo(map).bindPopup("<h2>Berlin</h2>BVG");
+		L.marker([48.133333,11.566667]).addTo(map).bindPopup("<h2>Munich</h2>MVV");
+		L.marker([50.936389, 6.952778]).addTo(map).bindPopup("<h2>Cologne</h2>VRR/VRS");
+		L.marker([49.488889, 8.469167]).addTo(map).bindPopup("<h2>Mannheim</h2>VRN");
+		L.marker([48.783333, 9.183333]).addTo(map).bindPopup("<h2>Stuttgart</h2>VVS");
+		L.marker([48.4, 9.983333]).addTo(map).bindPopup("<h2>Ulm</h2>DING");
+		L.marker([49.00921, 8.403951]).addTo(map).bindPopup("<h2>Karlsruhe</h2>KVV");
+		L.marker([49.75, 6.633333]).addTo(map).bindPopup("<h2>Trier</h2>VRN");
+		L.marker([52.366667, 9.716667]).addTo(map).bindPopup("<h2>Hannover</h2>GVH");
+		L.marker([51.533889, 9.935556]).addTo(map).bindPopup("<h2>Göttingen</h2>");
+		L.marker([53.083333, 8.8]).addTo(map).bindPopup("<h2>Bremen</h2>VBN");
+		L.marker([53.633333, 11.416667]).addTo(map).bindPopup("<h2>Schwerin</h2>VMV");
+		L.marker([54.083333, 12.133333]).addTo(map).bindPopup("<h2>Rostock</h2>RSAG");
+		L.marker([51.333333, 12.383333]).addTo(map).bindPopup("<h2>Leipzig</h2>NASA");
+		L.marker([50.483333, 12.116667]).addTo(map).bindPopup("<h2>Plauen</h2>VVV");
+		L.marker([48.2, 16.366667]).addTo(map).bindPopup("<h2>Vienna</h2>WIENER LINIEN");
+		L.marker([48.3, 14.283333]).addTo(map).bindPopup("<h2>Linz</h2>LINZ");
+		L.marker([47.066667, 15.433333]).addTo(map).bindPopup("<h2>Graz</h2>STV");
+		L.marker([39.95, -75.166667]).addTo(map).bindPopup("<h2>Philadelphia</h2>SEPTA");
+		L.marker([-33.865, 151.209444]).addTo(map).bindPopup("<h2>Sydney</h2>SYDNEY");
+		L.marker([-37.813611, 144.963056]).addTo(map).bindPopup("<h2>Melbourne</h2>MET");
+		L.marker([24.95, 55.333333]).addTo(map).bindPopup("<h2>Dubai</h2>DUB");
+		L.marker([31.783333,35.216667]).addTo(map).bindPopup("<h2>Jerusalem</h2>JET");
+
+		L.marker([48.8567,2.3508]).addTo(map).bindPopup("<h2>Paris</h2>PARIS");
+		L.marker([40.383333,-3.716667]).addTo(map).bindPopup("<h2>Madrid</h2>SPAIN");
+		L.marker([41.383333,2.183333]).addTo(map).bindPopup("<h2>Barcelona</h2>SPAIN");
+		L.marker([-23.55,-46.633333]).addTo(map).bindPopup("<h2>São Paulo</h2>BR");
+		L.marker([-30.033056,-51.23]).addTo(map).bindPopup("<h2>Porto Alegre</h2>BR");
+		L.marker([-41.288889,174.777222]).addTo(map).bindPopup("<h2>Wellington</h2>NZ");
+		L.marker([-36.840556,174.74]).addTo(map).bindPopup("<h2>Auckland</h2>NZ");
+		L.marker([60.170833, 24.9375]).addTo(map).bindPopup("<h2>Helsinki</h2>HSL");
+		L.marker([49.783333, 9.933333]).addTo(map).bindPopup("<h2>Würzburg</h2>BAVARIA");
+		L.marker([49.016667, 12.083333]).addTo(map).bindPopup("<h2>Regensburg</h2>BAVARIA");
+		L.marker([48.366667, 10.9]).addTo(map).bindPopup("<h2>Augsburg</h2>AVV");
+		L.marker([52.423056, 10.787222]).addTo(map).bindPopup("<h2>Wolfsburg</h2>BSVAG");
+		L.marker([50.833333, 12.916667]).addTo(map).bindPopup("<h2>Chemnitz</h2>VMS");
+		L.marker([49.233333, 7]).addTo(map).bindPopup("<h2>Saarbrücken</h2>VGS");
+		L.marker([47.266667, 11.383333]).addTo(map).bindPopup("<h2>Innsbruck</h2>IVB");
+		L.marker([46.55, 15.65]).addTo(map).bindPopup("<h2>Maribor</h2>STV");
+		L.marker([47.05, 8.3]).addTo(map).bindPopup("<h2>Luzern</h2>VBL");
+		L.marker([47.366667, 8.55]).addTo(map).bindPopup("<h2>Zurich</h2>ZVV");
+		L.marker([49.6, 6.116667]).addTo(map).bindPopup("<h2>Luxembourg</h2>LU");
+		L.marker([53.4, -3]).addTo(map).bindPopup("<h2>Liverpool</h2>MERSEY");
+		L.marker([51.507222, -0.1275]).addTo(map).bindPopup("<h2>London</h2>TLEM");
+		L.marker([53.347778, -6.259722]).addTo(map).bindPopup("<h2>Dublin</h2>TFI");
+		L.marker([44.5075, 11.351389]).addTo(map).bindPopup("<h2>Bologna</h2>ATC");
+		L.marker([52.233333, 21.016667]).addTo(map).bindPopup("<h2>Warsaw</h2>PL");
+		L.marker([37.783333, -122.416667]).addTo(map).bindPopup("<h2>San Francisco</h2>SF");
+		L.marker([43.526304, 5.445429]).addTo(map).bindPopup("<h2>Aix-en-Provence</h2>PACA");
+		L.marker([-27.5717, -48.6256]).addTo(map).bindPopup("<h2>Florianópolis</h2>BR-Floripa");
+		L.marker([43.7, -79.4]).addTo(map).bindPopup("<h2>Ontario</h2>Toronto, Ottawa");
+		L.marker([45.416667, -75.683333]).addTo(map).bindPopup("<h2>Ontario</h2>Toronto, Ottawa");
+//		L.marker([]).addTo(map).bindPopup("<h2></h2>");
+
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
+			minZoom: 2,
+			maxZoom: 8,
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			id: 'mapbox.streets'
+		}).addTo(map);
+
+		var myStyle = {
+		    "color": "#ff7800",
+			"stroke": false,
+		    "fillOpacity": 0.5,
+			"clickable": false
+		};
+
+		var geojsonLayer = new L.GeoJSON.AJAX("js/countries.geojson", {
+			style: myStyle,
+	    	filter: function(feature, layer) {
+				return countries.indexOf(feature.properties.name) >= 0;
+		    }
+		}).addTo(map);
+	
+
+
+	</script>
+
+  </body>
+</html>

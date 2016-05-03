@@ -1,0 +1,93 @@
+p {
+    font-size: 16px;
+}
+h1 {
+    font-size: 45px;
+    line-height: 48px;
+}
+h2 {
+    font-size: 34px;
+    line-height: 40px;
+}
+h3 {
+    font-size: 24px;
+    line-height: 32px;
+}
+.logo-header {
+    max-width: 100%;
+}
+section#top {
+    height: 40%;
+    position: relative;
+}
+
+section#top div {
+    background-image: url('../images/header.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.mdl-cell {
+    margin: 8px auto;
+}
+
+.summary {
+    padding-top: 100px;
+}
+.summary .stores, .summary .socialmedia {
+    margin-top: 50px;
+}
+.summary .socialmedia img {
+    margin-right: 10px;
+    margin-top: 25px;
+}
+.frame {
+    margin: auto;
+    text-align:center;
+}
+img.gif {
+    max-width: 100%;
+}
+.max-width {
+    max-width:1024px;
+}
+section.alternate {
+    background-color:#f2f2f2;
+}
+#map h2 {
+    font-size: 18px;
+    margin: 0;
+    line-height: 2;
+}
+.feature-card .mdl-card__title {
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.feature-card .mdl-card__media {
+    height: 240px;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.feature-card ..mdl-card__supporting-text {
+    font-size: 15px;
+}
+section#demo {
+    background-image: url('../images/headphones.jpg');
+    background-size: cover;
+    background-position: left top;
+    background-attachment: fixed;
+}
+img#bitcoin-qr {
+    max-width: 100%;
+    width: 128px;
+}
+footer p {
+    font-size: 12px;
+}
