@@ -201,6 +201,19 @@
             Have a look at the options below and just get started! :)
             </p>
 
+            <h2>Tell the world!</h2>
+
+            <p>
+            The easiest way to contribute to Transportr is to tell everybody about it.
+            You can post about it on social media or even better show your friends and family that it exists and how to use it.
+            The more users Transportr has, the more developers it will attract and the better it will become.
+            </p>
+
+            <p>
+            Another way to help is to rate it in <a href="https://play.google.com/store/apps/details?id=de.grobox.liberario&utm_source=website">Google Play</a>
+            and if you have a little more time also write a short review about it.
+            </p>
+
             <h2>Finding and Reporting Bugs</h2>
 
             <p>
@@ -218,7 +231,7 @@
             Screenshots are always welcome to illustrate your description.
             </p>
 
-            <h2>Testing Beta Releases</h2>
+            <h2 id="testing_beta">Testing Beta Releases</h2>
 
             <p>
             If you feel adventurous, you can test new versions of Transportr before they are released to the general public.
@@ -233,6 +246,10 @@
             you will need to uninstall this version first before you can install the one from my software channel,
             because they are signed with different keys.
             Please note that you will lose all data when you uninstall Transportr.
+            </p>
+
+            <p>
+            If you are getting Transportr from Google Play, you can <a href="https://play.google.com/apps/testing/de.grobox.liberario">join the beta program there</a>.
             </p>
 
             <h2>Design and Graphics</h2>
@@ -271,17 +288,7 @@
                 Please try the logo on black and white backgrounds first and if it does not work, just use a white background.
             </p>
 
-            <h3>Trip Detail Header Graphics</h3>
-
-            <p>
-            When you search for directions and view a trip in detail, there's a header graphic at the top.
-            Ideally, there's a different header graphic for each means of transport
-            that can be shown depending on your specific trip.
-            These graphics could even be localized per transport network showing a S-Bahn in Berlin
-            and a TGV for long distance connections in France.
-            </p>
-
-            <h2>Translating Into Your Language</h2>
+           <h2>Translating Into Your Language</h2>
 
             <p>
                 Translating Transportr is very easy.
@@ -295,6 +302,12 @@
 
             <p>
                 What you translate there will then be included in the next release of Transportr.
+            </p>
+
+            <p>
+                Please use the "Create Issue" feature of Transifex only if absolutely necessary.
+                If you think that the original text needs to be changed,
+                you can edit <a href="https://github.com/grote/Transportr/blob/master/res/values/strings.xml">this file</a> and submit a pull request.
             </p>
             
             <h2 id="add_region">Adding Support For More Regions</h2>
@@ -367,6 +380,23 @@
                 so it is probably easy to add your area.
             </p>
 
+            <p>
+                If this also doesn't help you and you really want to see your area supported,
+                you can create a GTFS file for it yourself.
+                For this, it is helpful if you at least have access to schedule information in some form
+                and know where the stops and lines are.
+                The <a href="https://github.com/grote/osm2gtfs">osm2gtfs</a> script gets the latter information from OpenStreetMap
+                and assists you with creating GTFS.
+                Check out the video below for one example of making your own GTFS feed using osm2gtfs.
+            </p>
+
+            <iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/5nd3WcTt8IU?rel=0" frameborder="0" allowfullscreen></iframe>
+
+            <p style="text-align: right">
+                [<a href="http://hemingway.softwarelivre.org/fisl17/41a/sala41a-high-201607141158.ogv">OGG version</a>
+                |
+                <a href="FISL17-Transportr.pdf">PDF Slides</a>]
+            </p>
 
             <h2 id="sourcecode">Working with the Source Code</h2>
 
@@ -444,6 +474,7 @@
 
             <h1>Donate</h1>
 
+            <h2>Flattr</h2>
             <p>
                 You can do small micro-payments via <a href="https://flattr.com">Flattr</a>.
             </p>
@@ -452,6 +483,7 @@
                 <a href="https://flattr.com/submit/auto?user_id=Tovok7&amp;url=http%3A%2F%2FTransportr.grobox.de"><img src="images/flattr.png" alt="Flattr me"></a>
             </p>
 
+            <h2>Bitcoin</h2>
             </div>
 
             <div class="mdl-cell mdl-cell--8-col">
@@ -472,6 +504,11 @@
             </div>
 
             <div class="mdl-cell mdl-cell--12-col">
+            <h2>ZCash</h2>
+            <p>
+                Coming soon!
+            </p>
+
             <p>
                 More options might be added later.
                 There is an <a href="https://github.com/grote/Transportr/issues/83">issue on GitHub</a>
@@ -545,7 +582,9 @@
 			'Norwegen',
 			'Poland',
 			'United Kingdom',
-			'Ireland'
+			'Ireland',
+            'France',
+            'Italy'
 		];
 
 		L.marker([52.516667,13.383333]).addTo(map).bindPopup("<h2>Berlin</h2>BVG");
@@ -558,7 +597,6 @@
 		L.marker([49.75, 6.633333]).addTo(map).bindPopup("<h2>Trier</h2>VRN");
 		L.marker([52.366667, 9.716667]).addTo(map).bindPopup("<h2>Hannover</h2>GVH");
 		L.marker([51.533889, 9.935556]).addTo(map).bindPopup("<h2>Göttingen</h2>");
-		L.marker([53.083333, 8.8]).addTo(map).bindPopup("<h2>Bremen</h2>VBN");
 		L.marker([53.633333, 11.416667]).addTo(map).bindPopup("<h2>Schwerin</h2>VMV");
 		L.marker([54.083333, 12.133333]).addTo(map).bindPopup("<h2>Rostock</h2>RSAG");
 		L.marker([51.333333, 12.383333]).addTo(map).bindPopup("<h2>Leipzig</h2>NASA");
@@ -568,9 +606,7 @@
 		L.marker([47.066667, 15.433333]).addTo(map).bindPopup("<h2>Graz</h2>STV");
 		L.marker([39.95, -75.166667]).addTo(map).bindPopup("<h2>Philadelphia</h2>SEPTA");
 		L.marker([-33.865, 151.209444]).addTo(map).bindPopup("<h2>Sydney</h2>SYDNEY");
-		L.marker([-37.813611, 144.963056]).addTo(map).bindPopup("<h2>Melbourne</h2>MET");
 		L.marker([24.95, 55.333333]).addTo(map).bindPopup("<h2>Dubai</h2>DUB");
-		L.marker([31.783333,35.216667]).addTo(map).bindPopup("<h2>Jerusalem</h2>JET");
 
 		L.marker([48.8567,2.3508]).addTo(map).bindPopup("<h2>Paris</h2>PARIS");
 		L.marker([40.383333,-3.716667]).addTo(map).bindPopup("<h2>Madrid</h2>SPAIN");
@@ -596,14 +632,17 @@
 		L.marker([53.347778, -6.259722]).addTo(map).bindPopup("<h2>Dublin</h2>TFI");
 		L.marker([44.5075, 11.351389]).addTo(map).bindPopup("<h2>Bologna</h2>ATC");
 		L.marker([52.233333, 21.016667]).addTo(map).bindPopup("<h2>Warsaw</h2>PL");
-		L.marker([37.783333, -122.416667]).addTo(map).bindPopup("<h2>San Francisco</h2>SF");
 		L.marker([43.526304, 5.445429]).addTo(map).bindPopup("<h2>Aix-en-Provence</h2>PACA");
 		L.marker([-27.5717, -48.6256]).addTo(map).bindPopup("<h2>Florianópolis</h2>BR-Floripa");
 		L.marker([43.7, -79.4]).addTo(map).bindPopup("<h2>Ontario</h2>Toronto, Ottawa");
 		L.marker([45.416667, -75.683333]).addTo(map).bindPopup("<h2>Ontario</h2>Toronto, Ottawa");
+		L.marker([-22.908333, -43.196389]).addTo(map).bindPopup("<h2>Rio de Janeiro</h2>BR");
+		L.marker([-19.916667, -43.933333]).addTo(map).bindPopup("<h2>Belo Horizonte</h2>BR");
+		L.marker([-22.900833, -47.057222]).addTo(map).bindPopup("<h2>Campinas</h2>BR");
+		L.marker([41.836944, -87.684722]).addTo(map).bindPopup("<h2>Chicago</h2>RTACHICAGO");
 //		L.marker([]).addTo(map).bindPopup("<h2></h2>");
 
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidG92b2s3IiwiYSI6ImNqMTBvbW51bzAzZmUzM3BoZ2xwM2Q5bTQifQ.Pr02RViRmTyOyRBSAKqxHQ', {
 			minZoom: 2,
 			maxZoom: 8,
 			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
