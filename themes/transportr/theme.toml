@@ -1,0 +1,14 @@
+# See https://github.com/gohugoio/hugoThemes#themetoml
+
+name = "Transportr"
+license = "AGPLv3"
+licenselink = "https://www.gnu.org/licenses/agpl-3.0.en.html"
+description = ""
+homepage = "https://transportr.app/"
+tags = []
+features = []
+min_version = "0.42"
+
+[author]
+  name = "Torsten Grote"
+  homepage = "https://blog.grobox.de"

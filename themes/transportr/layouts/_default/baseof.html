@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode }}">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+
+	<title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end	}}</title>
+
+	{{- template "_internal/opengraph.html" . -}}
+	{{- template "_internal/google_news.html" . -}}
+	{{- template "_internal/schema.html" . -}}
+	{{- template "_internal/twitter_cards.html" . -}}
+
+	<link href='{{ "/css/styles.css" }}' rel='stylesheet' type="text/css" />
+	<link href='{{ "/css/material-icons/material-icons.css" }}' rel='stylesheet' type="text/css" />
+	{{ if .HasShortcode "coverage-map" }}
+	<link href='{{ "/css/leaflet.css" }}' rel='stylesheet' type="text/css" />
+	{{ end }}
+</head>
+
+<body class="mdc-typography">
+
+<header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--waterfall">
+	<div class="mdc-toolbar__row">
+		<section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+			<a href="#" class="material-icons mdc-toolbar__menu-icon">menu</a>
+			<a href="/" class="mdc-toolbar__title">{{ .Site.Title }}</a>
+		</section>
+		<section class="mdc-toolbar__section mdc-toolbar__section--align-end">
+			<nav class="mdc-tab-bar">
+				<span class="mdc-tab" style="display:none"></span>
+				{{ $currentPage := . }}
+				{{ range .Site.Menus.toolbar }}
+				<a class="mdc-tab{{if or ($currentPage.IsMenuCurrent "toolbar" .) ($currentPage.HasMenuCurrent "toolbar" .) }} mdc-tab--active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+				{{ end }}
+				<span class="mdc-tab-bar__indicator"></span>
+			</nav>
+		</section>
+	</div>
+</header>
+
+<aside class="mdc-drawer mdc-drawer--temporary demo-drawer">
+	<nav class="mdc-drawer__drawer">
+		<header class="mdc-drawer__header">
+			<div class="mdc-drawer__header-content mdc-theme--text-primary-on-primary mdc-theme--primary-bg">
+				<!-- Header here -->
+			</div>
+		</header>
+		<nav class="mdc-drawer__content mdc-list-group">
+			<div class="mdc-list">
+				{{ $currentPage := . }}
+				{{ range .Site.Menus.main }}
+					<a class="mdc-list-item{{ if $currentPage.IsMenuCurrent "main" . }} mdc-list-item--selected{{ end }}" href="{{ .URL }}" title="{{ .Title }}">
+						<i class="material-icons mdc-list-item__graphic">{{ .Pre }}</i>{{ .Name }}
+					</a>
+				{{ end }}
+			</div>
+		</nav>
+	</nav>
+</aside>
+
+<main>
+	<div class="mdc-layout-grid">
+		<div class="mdc-layout-grid__inner">
+			<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2"></div>
+			<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8">
+				{{ block "main" . }}{{ .Content }}{{ end }}
+			</div>
+			<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2"></div>
+		</div>
+	</div>
+</main>
+
+<script src='{{ "/js/material-components-web.min.js" }}'></script>
+<script>
+<!--
+	mdc.autoInit();
+
+	var toolbar = mdc.toolbar.MDCToolbar.attachTo(document.querySelector('.mdc-toolbar'));
+	toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust');
+
+	mdc.tabs.MDCTabBar.attachTo(document.querySelector('.mdc-tab-bar'));
+
+	var drawer = new mdc.drawer.MDCTemporaryDrawer(document.querySelector('.mdc-drawer'));
+	document.querySelector('.mdc-toolbar__menu-icon').addEventListener('click', () => drawer.open = true);
+-->
+</script>
+
+{{ if .HasShortcode "coverage-map" }}
+	{{ partial "coverage-map.html" . }}
+{{ end }}
+
+<!-- Matomo -->
+<script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//transportr.app/stats/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', 8]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+<noscript><p><img src="//transportr.app/stats/matomo.php?idsite=8" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->
+
+</body>
+</html>

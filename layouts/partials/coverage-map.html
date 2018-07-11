@@ -1,0 +1,118 @@
+<script src="js/leaflet.js"></script>
+<script src="js/leaflet.ajax.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+	var countries = [
+		'Germany',
+		'Switzerland',
+		'Austria',
+		'Belgium',
+		'Netherlands',
+		'Luxembourg',
+		'Denmark',
+		'Sweden',
+		'Norway',
+		'Poland',
+		'United Kingdom',
+		'Ireland',
+		'France',
+		'Italy',
+		'Nicaragua',
+		'Costa Rica'
+	];
+
+	var markers = L.featureGroup([
+		L.marker([52.516667,13.383333]).bindPopup("<h2>Berlin</h2>BVG"),
+		L.marker([48.133333,11.566667]).bindPopup("<h2>Munich</h2>MVV"),
+		L.marker([50.936389, 6.952778]).bindPopup("<h2>Cologne</h2>VRR/VRS"),
+		L.marker([49.488889, 8.469167]).bindPopup("<h2>Mannheim</h2>VRN"),
+		L.marker([48.783333, 9.183333]).bindPopup("<h2>Stuttgart</h2>VVS"),
+		L.marker([48.4, 9.983333]).bindPopup("<h2>Ulm</h2>DING"),
+		L.marker([49.00921, 8.403951]).bindPopup("<h2>Karlsruhe</h2>KVV"),
+		L.marker([49.75, 6.633333]).bindPopup("<h2>Trier</h2>VRN"),
+		L.marker([52.366667, 9.716667]).bindPopup("<h2>Hannover</h2>GVH"),
+		L.marker([51.533889, 9.935556]).bindPopup("<h2>Göttingen</h2>"),
+		L.marker([53.633333, 11.416667]).bindPopup("<h2>Schwerin</h2>VMV"),
+		L.marker([54.083333, 12.133333]).bindPopup("<h2>Rostock</h2>RSAG"),
+		L.marker([51.333333, 12.383333]).bindPopup("<h2>Leipzig</h2>NASA"),
+		L.marker([50.483333, 12.116667]).bindPopup("<h2>Plauen</h2>VVV"),
+		L.marker([48.2, 16.366667]).bindPopup("<h2>Vienna</h2>WIENER LINIEN"),
+		L.marker([48.3, 14.283333]).bindPopup("<h2>Linz</h2>LINZ"),
+		L.marker([47.066667, 15.433333]).bindPopup("<h2>Graz</h2>STV"),
+		L.marker([39.95, -75.166667]).bindPopup("<h2>Philadelphia</h2>SEPTA"),
+		L.marker([-33.865, 151.209444]).bindPopup("<h2>Sydney</h2>SYDNEY"),
+		L.marker([24.95, 55.333333]).bindPopup("<h2>Dubai</h2>DUB"),
+		L.marker([48.8567,2.3508]).bindPopup("<h2>Paris</h2>PARIS"),
+		L.marker([40.383333,-3.716667]).bindPopup("<h2>Madrid</h2>SPAIN"),
+		L.marker([41.383333,2.183333]).bindPopup("<h2>Barcelona</h2>SPAIN"),
+		L.marker([-23.55,-46.633333]).bindPopup("<h2>São Paulo</h2>BR"),
+		L.marker([-30.033056,-51.23]).bindPopup("<h2>Porto Alegre</h2>BR"),
+		L.marker([-41.288889,174.777222]).bindPopup("<h2>Wellington</h2>NZ"),
+		L.marker([-36.840556,174.74]).bindPopup("<h2>Auckland</h2>NZ"),
+		L.marker([60.170833, 24.9375]).bindPopup("<h2>Helsinki</h2>HSL"),
+		L.marker([49.783333, 9.933333]).bindPopup("<h2>Würzburg</h2>BAVARIA"),
+		L.marker([49.016667, 12.083333]).bindPopup("<h2>Regensburg</h2>BAVARIA"),
+		L.marker([48.366667, 10.9]).bindPopup("<h2>Augsburg</h2>AVV"),
+		L.marker([52.423056, 10.787222]).bindPopup("<h2>Wolfsburg</h2>BSVAG"),
+		L.marker([50.833333, 12.916667]).bindPopup("<h2>Chemnitz</h2>VMS"),
+		L.marker([49.233333, 7]).bindPopup("<h2>Saarbrücken</h2>VGS"),
+		L.marker([47.266667, 11.383333]).bindPopup("<h2>Innsbruck</h2>IVB"),
+		L.marker([46.55, 15.65]).bindPopup("<h2>Maribor</h2>STV"),
+		L.marker([47.05, 8.3]).bindPopup("<h2>Luzern</h2>VBL"),
+		L.marker([47.366667, 8.55]).bindPopup("<h2>Zurich</h2>ZVV"),
+		L.marker([49.6, 6.116667]).bindPopup("<h2>Luxembourg</h2>LU"),
+		L.marker([53.4, -3]).bindPopup("<h2>Liverpool</h2>MERSEY"),
+		L.marker([51.507222, -0.1275]).bindPopup("<h2>London</h2>TLEM"),
+		L.marker([53.347778, -6.259722]).bindPopup("<h2>Dublin</h2>TFI"),
+		L.marker([44.5075, 11.351389]).bindPopup("<h2>Bologna</h2>ATC"),
+		L.marker([52.233333, 21.016667]).bindPopup("<h2>Warsaw</h2>PL"),
+		L.marker([43.526304, 5.445429]).bindPopup("<h2>Aix-en-Provence</h2>PACA"),
+		L.marker([-27.5717, -48.6256]).bindPopup("<h2>Florianópolis</h2>BR-Floripa"),
+		L.marker([43.7, -79.4]).bindPopup("<h2>Ontario</h2>Toronto, Ottawa"),
+		L.marker([45.416667, -75.683333]).bindPopup("<h2>Ontario</h2>Toronto, Ottawa"),
+		L.marker([-22.908333, -43.196389]).bindPopup("<h2>Rio de Janeiro</h2>BR"),
+		L.marker([-19.916667, -43.933333]).bindPopup("<h2>Belo Horizonte</h2>BR"),
+		L.marker([-22.900833, -47.057222]).bindPopup("<h2>Campinas</h2>BR"),
+		L.marker([41.836944, -87.684722]).bindPopup("<h2>Chicago</h2>RTACHICAGO"),
+//		L.marker([]).bindPopup("<h2></h2>"),
+	]);
+
+	var mapDiv = document.getElementById('map');
+	mapDiv.addEventListener("click", addMap);
+
+	function addMap() {
+		mapDiv.removeEventListener("click", addMap);
+		mapDiv.style.background = 'none';
+
+		var map = L.map('map', {
+			zoom: 2,
+			center: [30,0],
+			attributionControl: true,
+			zoomControl: true,
+			scrollWheelZoom: true,
+		});
+
+		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidG92b2s3IiwiYSI6ImNqMTBvbW51bzAzZmUzM3BoZ2xwM2Q5bTQifQ.Pr02RViRmTyOyRBSAKqxHQ', {
+			minZoom: 2,
+			maxZoom: 8,
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			id: 'mapbox.streets'
+		}).addTo(map);
+
+		var geojsonLayer = new L.GeoJSON.AJAX("/js/countries.geojson", {
+			style: {
+				"color": "#e53935",
+				"stroke": false,
+				"fillOpacity": 0.5,
+				"clickable": false,
+			},
+			filter: function(feature, layer) {
+				return countries.indexOf(feature.properties.name) >= 0;
+			}
+		}).addTo(map);
+		markers.addTo(map);
+	}
+-->
+</script>

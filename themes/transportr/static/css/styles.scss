@@ -1,0 +1,108 @@
+$mdc-theme-primary: #f44336;
+$mdc-theme-secondary: #e53935;
+$mdc-theme-accent: #e53935;
+$mdc-theme-background: white;
+
+@import "node_modules/material-components-web/material-components-web";
+
+body {
+    margin: 0;
+}
+
+main {
+    padding: 32px;
+
+    h1 {
+        font-size: 2.3em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    a {
+        color: $mdc-theme-accent;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    figure {
+        margin: 1em;
+    }
+
+    figure.right {
+        float: right;
+    }
+}
+
+.mdc-toolbar__section--align-start {
+    align-items: inherit;
+}
+
+a.mdc-toolbar__title {
+    color: white;
+}
+
+.mdc-tab-bar {
+    height: $mdc-toolbar-row-height;
+
+    @media (max-width: $mdc-toolbar-mobile-landscape-width-breakpoint)
+      and (orientation: landscape) {
+      min-height: $mdc-toolbar-mobile-landscape-row-height;
+    }
+    @media (max-width: $mdc-toolbar-mobile-breakpoint) {
+      min-height: $mdc-toolbar-mobile-row-height;
+    }
+}
+
+.mdc-toolbar__section {
+    padding: 0;
+}
+
+.mdc-tab, .mdc-tab:hover {
+    color: white;
+}
+
+.mdc-tab-bar__indicator {
+    background-color: white;
+}
+
+.mdc-drawer__header-content {
+    background: url("/img/account_header_background.jpg");
+}
+
+.sub-list a.mdc-list-item {
+    font-weight: normal;
+    margin-left: 1em;
+}
+
+#map {
+    height: 500px;
+    margin: auto;
+    margin-bottom: 20px;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @media (min-width: 1200px) {
+        background-image: url("/img/coverage-map.png");
+    }
+
+    @media (max-width: 1199px) {
+        background-image: url("/img/coverage-map-small.png");
+    }
+}
+
+.mdc-card__title {
+    font-weight: bold;
+}
+
+.mdc-card__media {
+    background-position: left top;
+}
+
+.mdc-card__content {
+    padding: 1em;
+}
