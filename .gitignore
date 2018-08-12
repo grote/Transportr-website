@@ -4,9 +4,9 @@
 /public
 /deploy.sh
 
+/resources
 /static/css/leaflet.css
 /static/css/images/marker-*.png
 /static/js/leaflet*.js
 /themes/transportr/static/css/material-icons
-/themes/transportr/static/css/styles.css*
 /themes/transportr/static/js/material-components-web.min.js

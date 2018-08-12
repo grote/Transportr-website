@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Compile SASS
-sass -I . -I ./node_modules/ -t compressed -q themes/transportr/static/css/styles.scss themes/transportr/static/css/styles.css
-
 # MDC
 cp node_modules/material-components-web/dist/material-components-web.min.js themes/transportr/static/js/
 mkdir -p themes/transportr/static/css/material-icons

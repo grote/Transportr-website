@@ -12,7 +12,10 @@
 	{{- template "_internal/schema.html" . -}}
 	{{- template "_internal/twitter_cards.html" . -}}
 
-	<link href='{{ "/css/styles.css" }}' rel='stylesheet' type="text/css" />
+	{{ $options := (dict "enableSourceMap" true "includePaths" (slice "node_modules/")) }}
+	{{ $styles := resources.Get "styles.scss" | toCSS $options | minify | fingerprint }}
+	<link href="{{ $styles.Permalink }}" rel="stylesheet" type="text/css" integrity="{{ $styles.Data.Integrity }}">
+
 	<link href='{{ "/css/material-icons/material-icons.css" }}' rel='stylesheet' type="text/css" />
 	{{ if .HasShortcode "coverage-map" }}
 	<link href='{{ "/css/leaflet.css" }}' rel='stylesheet' type="text/css" />
