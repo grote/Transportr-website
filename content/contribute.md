@@ -223,10 +223,10 @@ please create an issue for the feature you want to work on _before_ doing any ma
 so that other developers know about your plans, can coordinate, prevent duplicated work
 and discuss the best approach for your undertaking.
 
-Missing features are documented in the [issue tracker](https://github.com/grote/Transportr/issues?labels=enhancement&state=open).
+Missing features are documented in the [issue tracker](https://github.com/grote/Transportr/labels/enhancement%20%F0%9F%8F%97%EF%B8%8F).
 Feel free to look there for ideas or to add your own.
 
-There is also [a list of beginner tasks](https://github.com/grote/Transportr/labels/beginner%20job)
+There is also [a list of beginner tasks](https://github.com/grote/Transportr/labels/beginner%20job%20%F0%9F%94%B0)
 for you to get started easily.
 
 ## Free Software (Open Source)
