@@ -112,6 +112,16 @@
 				return countries.indexOf(feature.properties.name) >= 0;
 			}
 		}).addTo(map);
+
+		var geojsonLayer = new L.GeoJSON.AJAX ("/js/states.geojson", {
+		    style: function(feature) {
+			switch (feature.properties.region) {
+			case 'state': return {color: "#ff0000"};
+		    }
+		}
+		}).addTo(map);
+
+
 		markers.addTo(map);
 	}
 -->
