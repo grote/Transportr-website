@@ -172,9 +172,8 @@ Once it landed there, it can already be used in Transportr.
 
 After your pull request has been accepted,
 you can move on to adding the last final bit to Transportr.
-Here's two (*outdated*) examples:
-[Ontario](https://github.com/grote/Transportr/pull/157/files) and
-[South-West of France](https://github.com/grote/Transportr/commit/25a51433bc5aecb1b6e2f5baf96eed763139962a).
+Here's one example:
+[Hungary](https://github.com/grote/Transportr/pull/451/files).
 Once this pull request has been accepted as well,
 your area will be included in the next Transportr release.
 
