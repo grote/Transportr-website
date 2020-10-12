@@ -2,3 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Transportr"
 theme = "transportr"
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
