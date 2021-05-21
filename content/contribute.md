@@ -126,7 +126,7 @@ The easiest way to add your area to Transportr
 is to check if its data is already [included in Navitia](https://navitia.opendatasoft.com/explore/).
 If it is not there,
 you can check if your public transportation agencies are already providing their data to Google.
-There is [a long list](https://maps.google.com/landing/transit/cities/index.html)
+There is [a long list](https://code.google.com/archive/p/googletransitdatafeed/wikis/PublicFeeds.wiki)
 that you can consult.
 If you find your city there,
 a [General Transit Feed Specification](https://en.wikipedia.org/wiki/General_Transit_Feed_Specification) (GTFS)
