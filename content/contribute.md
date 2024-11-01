@@ -120,41 +120,11 @@ This library is the place where you need to add new transport networks.
 This way not only Transportr will benefit from your work,
 but also other apps using this library.
 
-### Using GTFS
-
-The easiest way to add your area to Transportr
-is to check if its data is already [included in Navitia](https://navitia.opendatasoft.com/explore/).
-If it is not there,
-you can check if your public transportation agencies are already providing their data to Google.
-There is [a long list](https://maps.google.com/landing/transit/cities/index.html)
-that you can consult.
-If you find your city there,
-a [General Transit Feed Specification](https://en.wikipedia.org/wiki/General_Transit_Feed_Specification) (GTFS)
-already exists for it.
-In the best case, this GTFS data is also published somewhere.
-Find out where it is published
-and then just [contact Navitia](https://groups.google.com/forum/#!forum/navitia)
-for them to make this data available via their free web service API.
-If they stopped adding new areas,
-you can also host your own Navitia server since it is fully Free Software.
-Transportr can use the Navitia API on whichever server to work in your area.
-
-{{< figure
-    src="/img/navitia.png"
-    link="http://www.navitia.io/"
-    alt="Powered by Navitia.io"
-    class="right" >}}
-
-If the GTFS data exists, but is not published,
-please contact your public transport agencies
-and convince them to publish this data.
-A public service for the people should embrace Open Data and publish its data.
-
-So the data of your area is in Navitia already, that's great!
-Now there's just two steps missing of getting it into Transportr.
-Unfortunately, for those steps it is helpful to know how to use git and Java.
-But even if don't know those, getting the preconditions from above ready
-will help the next person to do it.
+You can check whether the system you want to add is based on
+[HAFAS](http://www.hacon.de/hafas-en) or
+[EFA](http://efa.de).
+Support for these systems is already in the public transport enabler,
+so it is probably easy to add your area.
 
 ### Adding it to Transportr
 
@@ -176,35 +146,6 @@ Here's one example:
 [Hungary](https://github.com/grote/Transportr/pull/451/files).
 Once this pull request has been accepted as well,
 your area will be included in the next Transportr release.
-
-### Other Options
-
-In case your public transport agency is not working with Google
-and does not have GTFS data available for others to use,
-you can still check whether their system is based on
-[HAFAS](http://www.hacon.de/hafas-en),
-[EFA](http://efa.de) or
-[TSI](http://www.tsinw.com).
-Support for these systems is already in the public transport enabler,
-so it is probably easy to add your area.
-
-If this also doesn't help you
-and you really want to see your area supported,
-you can create a GTFS file for it yourself.
-For this, it is helpful if you at least have access to schedule information in some form
-and know where the stops and lines are.
-The [osm2gtfs](https://github.com/grote/osm2gtfs) script
-gets the latter information from OpenStreetMap
-and assists you with creating GTFS.
-
-Check out the video below for one example of making your own GTFS feed using osm2gtfs.
-
-{{< youtube-simple src="/img/youtube-osm2gtfs.png" video="https://www.youtube.com/watch?v=5nd3WcTt8IU" >}}
-
-\[
-  [OGG version](http://hemingway.softwarelivre.org/fisl17/41a/sala41a-high-201607141158.ogv) |
-  [PDF Slides](/pdf/FISL17-Transportr.pdf)
-\]
 
 ## Working with the Source Code
 
